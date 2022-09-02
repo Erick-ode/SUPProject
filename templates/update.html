@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Registro de usuários
+</h1>
+<div class="content" style="align-items: center">
+    <h3 class="title">Usuários</h3>
+    <form style="text-align: center" action="/edit/{{ user.id }}" method="POST">
+        <div class="field">
+            <div class="control">
+                <input class="input " type="number" min="1" max="100" name="agency" placeholder="Agência"
+                       autofocus="" value="{{ user.agency }}" >
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <input class="input " type="text" name="name" placeholder="Nome" autofocus=""
+                       value="{{ user.name }}" >
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="checkbox">
+                <input type="checkbox" name="admin" value="{{ user.admin }}">
+                Administrador
+            </label>
+        </div>
+
+        <button class="button is-block is-info is-fullwidth">Editar</button>
+    </form>
+</div>
+{% endblock %}

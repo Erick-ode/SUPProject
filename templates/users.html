@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Registro de usuários
+</h1>
+<div class="content" style="align-items: center">
+    <h3 class="title">Usuários</h3>
+    <form action="">
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Agência</th>
+                <th>Administrador</th>
+                <th>Ações</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.agency }}</td>
+                <td>{{ user.admin }}</td>
+                <td>
+                    <a href="/del/{{ user.id }}">Apagar</a><br>
+                    <a href="/edit/{{ user.id }}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</div>
+{% endblock %}

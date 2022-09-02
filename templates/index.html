@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<h1 class="title">
+    Registro de atendimento
+</h1>
+
+{% if current_user.is_authenticated %}
+<div class="content" style="align-items: center">
+    <form action="/atendimento" method="POST">
+        <table>
+            <tr>
+                <th>Contato</th>
+                <th>Canal</th>
+                <th>Atendimento</th>
+                <th>Associado</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="contact" id="active" value="Ativo">
+                    <label for="active">Ativo</label><br>
+                    <input type="radio" name="contact" id="receptive" value="Receptivo">
+                    <label for="receptive">Receptivo</label>
+                </td>
+                <td>
+                    <input type="radio" name="channel" id="pres" value="Presencial">
+                    <label for="pres">Presencial</label>
+                    <input type="radio" name="channel" id="tel" value="Telefone">
+                    <label for="tel">Telefone</label><br>
+                    <input type="radio" name="channel" id="email" value="E-mail">
+                    <label for="email">E-mail</label>
+                    <input type="radio" name="channel" id="whats" value="Whatsapp">
+                    <label for="whats">Whatsapp</label><br>
+                    <input type="radio" name="channel" id="visit" value="Visita">
+                    <label for="visit">Visita</label>
+                </td>
+                <td>
+                    <input type="radio" name="attendance" id="service" value="Serviço">
+                    <label for="service">Serviço</label><br>
+                    <input type="radio" name="attendance" id="business" value="Negócio">
+                    <label for="business">Negócio</label><br>
+                    <input type="radio" name="attendance" id="direction" value="Direcionamento">
+                    <label for="direction">Direcionamento</label>
+                </td>
+                <td>
+                    <input type="radio" name="associate" id="myWall" value="Minha carteira">
+                    <label for="myWall">Minha carteira</label>
+                    <input type="radio" name="associate" id="otherWall" value="Outras carteiras">
+                    <label for="otherWall">Outras carteiras</label><br>
+                    <input type="radio" name="associate" id="otherAg" value="Outras agências">
+                    <label for="otherAg">Outras agências</label>
+                    <input type="radio" name="associate" id="otherCoop" value="Outras cooperativas">
+                    <label for="otherCoop">Outras cooperativas</label><br>
+                    <input type="radio" name="associate" id="saver" value="Poupador">
+                    <label for="saver">Poupador</label>
+                    <input type="radio" name="associate" id="notAssociate" value="Não associado">
+                    <label for="notAssociate">Não associado</label>
+                </td>
+            </tr>
+            <tr>
+                <th>Demanda</th>
+                <th>Houve oferta de produto?</th>
+                <th>Qual?</th>
+                <th>Efetivou?</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="demand" id="cc" value="Conta corrente/Poupador">
+                    <label for="cc">Conta corrente/Poupador</label>
+                    <input type="radio" name="demand" id="cards" value="Cartões">
+                    <label for="cards">Cartões</label><br>
+                    <input type="radio" name="demand" id="digital" value="Canais digitais">
+                    <label for="digital">Canais digitais</label>
+                    <input type="radio" name="demand" id="insurance" value="Seguros e previdência">
+                    <label for="insurance">Seguros e previdência</label><br>
+                    <input type="radio" name="demand" id="consor" value="Consórcio">
+                    <label for="consor">Consórcio</label>
+                    <input type="radio" name="demand" id="charge" value="Cobrança">
+                    <label for="charge">Cobrança</label><br>
+                    <input type="radio" name="demand" id="generalCred" value="Crédito geral">
+                    <label for="generalCred">Crédito geral</label>
+                    <input type="radio" name="demand" id="credRecovery" value="Recuperação de crédito">
+                    <label for="credRecovery">Recuperação de crédito</label><br>
+                    <input type="radio" name="demand" id="receDiscount" value="Desconto de recebíveis">
+                    <label for="receDiscount">Desconto de recebíveis</label><br>
+                    <label for="other">Outros</label>
+                    <input type="text" name="demand" id="other">
+                </td>
+                <td>
+                    <input type="radio" name="product_offer" id="productYes" value="Sim">
+                    <label for="productYes">Sim</label><br>
+                    <input type="radio" name="product_offer" id="productNo" value="Não">
+                    <label for="productNo">Não</label>
+                </td>
+                <td>
+                    <input type="radio" name="product" id="cardsProd" value="Cartões">
+                    <label for="cardsProd">Cartões</label><br>
+                    <input type="radio" name="product" id="digitalProd" value="Canais digitais">
+                    <label for="digitalProd">Canais digitais</label>
+                    <input type="radio" name="product" id="insuranceProd" value="Seguros">
+                    <label for="insuranceProd">Seguros</label><br>
+                    <input type="radio" name="product" id="pensionProd" value="Previdência">
+                    <label for="pensionProd">Previdência</label><br>
+                    <input type="radio" name="product" id="investProd" value="Investimentos">
+                    <label for="investProd">Investimentos</label><br>
+                    <input type="radio" name="product" id="consorProd" value="Consórcio">
+                    <label for="consorProd">Consórcio</label>
+                    <input type="radio" name="product" id="chargeProd" value="Cobrança">
+                    <label for="chargeProd">Cobrança</label><br>
+                    <input type="radio" name="product" id="generalCredProd" value="Crédito geral">
+                    <label for="generalCredProd">Crédito geral</label>
+                    <input type="radio" name="product" id="savingProd" value="Poupança programada">
+                    <label for="savingProd">Poupança programada</label><br>
+                    <input type="radio" name="product" id="capitalProd" value="Capital programado">
+                    <label for="capitalProd">Capital programado</label><br>
+                    <input type="radio" name="product" id="debitProd" value="Débito automático">
+                    <label for="debitProd">Débito automático</label><br>
+                    <label for="otherProd">Outros</label>
+                    <input type="text" name="product" id="otherProd">
+                </td>
+                <td>
+                    <input type="radio" name="effective" id="effYes" value="Sim">
+                    <label for="effYes">Sim</label><br>
+                    <input type="radio" name="effective" id="effNo" value="Não">
+                    <label for="effNo">Não</label>
+                </td>
+            </tr>
+            <tr>
+                <th>Tempo médito gasto</th>
+                <th>Horário</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="time_spent" id="fiveMin" value="Até 5 minutos">
+                    <label for="fiveMin">Até 5 minutos</label><br>
+                    <input type="radio" name="time_spent" id="fifteenMin" value="Até 15 minutos">
+                    <label for="fifteenMin">Até 15 minutos</label><br>
+                    <input type="radio" name="time_spent" id="more" value="Acima de 15 minutos">
+                    <label for="more">Acima de 15 minutos</label>
+                </td>
+                <td>
+                    <input type="radio" name="time_hour" id="eightTen" value="08:00-10:00">
+                    <label for="eightTen">08:00-10:00</label><br>
+                    <input type="radio" name="time_hour" id="tenTwelve" value="10:00-12:00">
+                    <label for="tenTwelve">10:00-12:00</label>
+                    <input type="radio" name="time_hour" id="twelveFif" value="12:00-15:00">
+                    <label for="twelveFif">12:00-15:00</label><br>
+                    <input type="radio" name="time_hour" id="fiftennFive" value="15:00-17:00">
+                    <label for="fiftennFive">15:00-17:00</label>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Enviar" id="submitButton">
+    </form>
+    {% if admin %}
+    <a href="/registros">Registros</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+

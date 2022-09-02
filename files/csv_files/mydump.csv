@@ -1,0 +1,7 @@
+Nome,Contato,Canal,Atendimento,Associado,Demanda,Oferta_produto,Produto,Efetivou,Tempo_médio_gasto,Horário_atendimento
+Erick Amaral,Ativo,Presencial,Serviço,Minha carteira,Conta corrente/Poupador,Sim,Cartões,Sim,Até 5 minutos,08:00-10:00
+Erick Amaral,Receptivo,Telefone,Negócio,Outras carteiras,Cartões,Sim,Canais digitais,Não,Até 15 minutos,10:00-12:00
+Sandro Sousa dos Anjos,Ativo,E-mail,Direcionamento,Outras agências,Canais digitais,Não,,,Acima de 15 minutos,12:00-15:00
+Sandro Sousa dos Anjos,Receptivo,Whatsapp,Serviço,Outras cooperativas,Seguros e previdência,Sim,Seguros,Sim,Até 5 minutos,15:00-17:00
+Gabriele Tosti Benitez,Ativo,Presencial,Serviço,Outras cooperativas,Consórcio,Sim,Investimentos,Sim,Até 5 minutos,15:00-17:00
+Gabriele Tosti Benitez,Ativo,Telefone,Negócio,Não associado,Crédito geral,Sim,Crédito geral,Sim,Acima de 15 minutos,10:00-12:00

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Olá, {{ name }}!
+</h1>
+<div class="content">
+    <h1 style="text-align: center">Todos os registros</h1>
+    <table>
+        <tr>
+            <th>Usuário</th>
+            <th>Contato</th>
+            <th>Canal</th>
+            <th>Atendimento</th>
+            <th>Associado</th>
+            <th>Demanda</th>
+            <th>Houve oferta de produto?</th>
+            <th>Qual?</th>
+            <th>Efetivou?</th>
+            <th>Tempo médito gasto</th>
+            <th>Horário</th>
+        </tr>
+        {% for register in registers %}
+        <tr>
+            <td>{{ register.user.name }}</td>
+            <td>{{ register.contact }}</td>
+            <td>{{ register.channel }}</td>
+            <td>{{ register.attendance }}</td>
+            <td>{{ register.associate }}</td>
+            <td>{{ register.demand }}</td>
+            <td>{{ register.product_offer }}</td>
+            <td>{{ register.product }}</td>
+            <td>{{ register.effective }}</td>
+            <td>{{ register.time_spent }}</td>
+            <td>{{ register.time_hour }}</td>
+            <td>
+                 <a href="/delete/{{ register.id }}">Apagar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Voltar</a>
+</div>
+{% endblock %}
