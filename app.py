@@ -32,7 +32,7 @@ def create_app():
     from main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    from export import export as export_blueprint
+    from files.export import export as export_blueprint
     app.register_blueprint(export_blueprint)
 
     return app
