@@ -8,17 +8,17 @@
     <h1 style="text-align: center">Todos os registros</h1>
     <table>
         <tr>
-            <th>Usuário</th>
-            <th>Contato</th>
-            <th>Canal</th>
-            <th>Atendimento</th>
-            <th>Associado</th>
-            <th>Demanda</th>
-            <th>Houve oferta de produto?</th>
-            <th>Qual?</th>
-            <th>Efetivou?</th>
-            <th>Tempo médito gasto</th>
-            <th>Horário</th>
+            <th class="th_usuario">Usuário</th>
+            <th class="th_usuario">Contato</th>
+            <th class="th_usuario">Canal</th>
+            <th class="th_usuario">Atendimento</th>
+            <th class="th_usuario">Associado</th>
+            <th class="th_usuario">Demanda</th>
+            <th class="th_usuario">Houve oferta de produto?</th>
+            <th class="th_usuario">Qual?</th>
+            <th class="th_usuario">Efetivou?</th>
+            <th class="th_usuario">Tempo médito gasto</th>
+            <th class="th_usuario">Horário</th>
         </tr>
         {% for register in registers %}
         <tr>
@@ -33,7 +33,7 @@
             <td>{{ register.effective }}</td>
             <td>{{ register.time_spent }}</td>
             <td>{{ register.time_hour }}</td>
-            <td>
+            <td class="button_apagar" >
                  <a href="/delete/{{ register.id }}">Apagar</a>
             </td>
         </tr>
