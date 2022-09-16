@@ -3,17 +3,14 @@
 
 
 {% block content %}
-<h1 class="title">
-    Registro de atendimento
-</h1>
+<h1 class="title">Registro de atendimento </h1>
 
 {% if current_user.is_authenticated %}
-</head>
 
 <script language="javascript">
     var ids= ['cardsProd', 'digitalProd', 'insuranceProd', 'pensionProd',
      'investProd', 'consorProd', 'chargeProd', 'generalCredProd', 
-     'savingProd', 'capitalProd', 'debitProd', 'out_bttn', 'effYes', 'effNo']
+     'savingProd', 'capitalProd', 'debitProd', 'outProd', 'effYes', 'effNo']
 
 
     function habilitacao(){
@@ -28,8 +25,8 @@
     }
 }
   </script>
-   
-<div class="content" style="align-items: center">
+
+<div class="content">
     <form action="/atendimento" method="POST">
         <table>
             <tr>
@@ -40,44 +37,44 @@
             </tr>
             <tr>
                 <td class="td_contato">
-                    <input type="radio" class="contato" name="contact" id="active" value="Ativo" onClick="habilitacao()">
+                    <input type="radio" class="contato" name="contact" id="active" value="Ativo" onClick="habilitacao()"required>
                     <label for="active">Ativo</label><br>
                     <input type="radio" class="contato" name="contact" id="receptive" value="Receptivo" onClick="habilitacao()">
-                    <label for="receptive">Receptivo</label>
+                    <label for="receptive">Receptivo</label><br>
                 </td>
                 <td class="td_canal">
-                    <input type="radio" name="channel" id="pres" value="Presencial" onClick="habilitacao()">
-                    <label for="pres">Presencial</label>
-                    <input type="radio" name="channel" id="tel" value="Telefone" onClick="habilitacao()">
+                    <input type="radio" name="channel" id="pres" class="canal" value="Presencial" onClick="habilitacao()"required>
+                    <label for="pres">Presencial</label><br>
+                    <input type="radio" name="channel" id="tel" class="canal" value="Telefone" onClick="habilitacao()">
                     <label for="tel">Telefone</label><br>
-                    <input type="radio" name="channel" id="email" value="E-mail" onClick="habilitacao()">
-                    <label for="email">E-mail</label>
-                    <input type="radio" name="channel" id="whats" value="Whatsapp" onClick="habilitacao()">
+                    <input type="radio" name="channel" id="email" class="canal" value="E-mail" onClick="habilitacao()">
+                    <label for="email">E-mail</label><br>
+                    <input type="radio" name="channel" id="whats" class="canal" value="Whatsapp" onClick="habilitacao()">
                     <label for="whats">Whatsapp</label><br>
                     <input type="radio" name="channel" id="visit" value="Visita" onClick="habilitacao()">
-                    <label for="visit">Visita</label>
+                    <label for="visit">Visita</label><br>
                 </td>
                 <td class="td_atendimento">
-                    <input type="radio" name="attendance" id="service" value="Serviço" onClick="habilitacao()">
+                    <input type="radio" name="attendance" id="service" value="Serviço" onClick="habilitacao()"required>
                     <label for="service">Serviço</label><br>
                     <input type="radio" name="attendance" id="business" value="Negócio" onClick="habilitacao()">
                     <label for="business">Negócio</label><br>
                     <input type="radio" name="attendance" id="direction" value="Direcionamento" onClick="habilitacao()">
-                    <label for="direction">Direcionamento</label>
+                    <label for="direction">Direcionamento</label><br>
                 </td>
                 <td class="td_associado">
-                    <input type="radio" name="associate" id="myWall" value="Minha carteira" onClick="habilitacao()">
-                    <label for="myWall">Minha carteira</label>
+                    <input type="radio" name="associate" id="myWall" value="Minha carteira" onClick="habilitacao()"required>
+                    <label for="myWall">Minha carteira</label><br>
                     <input type="radio" name="associate" id="otherWall" value="Outras carteiras" onClick="habilitacao()">
                     <label for="otherWall">Outras carteiras</label><br>
                     <input type="radio" name="associate" id="otherAg" value="Outras agências" onClick="habilitacao()">
-                    <label for="otherAg">Outras agências</label>
+                    <label for="otherAg">Outras agências</label><br>
                     <input type="radio" name="associate" id="otherCoop" value="Outras cooperativas" onClick="habilitacao()">
                     <label for="otherCoop">Outras cooperativas</label><br>
                     <input type="radio" name="associate" id="saver" value="Poupador" onClick="habilitacao()">
-                    <label for="saver">Poupador</label>
+                    <label for="saver">Poupador</label><br>
                     <input type="radio" name="associate" id="notAssociate" value="Não associado" onClick="habilitacao()">
-                    <label for="notAssociate">Não associado</label onClick="habilitacao()">
+                    <label for="notAssociate"onClick="habilitacao()">Não associado</label><br>
                 </td>
             </tr>
             <tr>
@@ -88,65 +85,66 @@
             </tr>
             <tr>
                 <td class="td_demanda">
-                    <input type="radio" name="demand" id="cc" value="Conta corrente/Poupador" onClick="habilitacao()">
-                    <label for="cc">Conta corrente/Poupador</label>
+                    <input type="radio" name="demand" id="cc" value="Conta corrente/Poupador" onClick="habilitacao()"required>
+                    <label for="cc">Conta corrente/Poupador</label><br>
                     <input type="radio" name="demand" id="cards" value="Cartões" onClick="habilitacao()">
                     <label for="cards">Cartões</label><br>
                     <input type="radio" name="demand" id="digital" value="Canais digitais" onClick="habilitacao()">
-                    <label for="digital">Canais digitais</label>
+                    <label for="digital">Canais digitais</label><br>
                     <input type="radio" name="demand" id="insurance" value="Seguros e previdência" onClick="habilitacao()">
                     <label for="insurance">Seguros e previdência</label><br>
                     <input type="radio" name="demand" id="consor" value="Consórcio" onClick="habilitacao()">
-                    <label for="consor">Consórcio</label>
+                    <label for="consor">Consórcio</label><br>
                     <input type="radio" name="demand" id="charge" value="Cobrança" onClick="habilitacao()">
                     <label for="charge">Cobrança</label><br>
                     <input type="radio" name="demand" id="generalCred" value="Crédito geral" onClick="habilitacao()">
-                    <label for="generalCred">Crédito geral</label>
+                    <label for="generalCred">Crédito geral</label><br>
                     <input type="radio" name="demand" id="credRecovery" value="Recuperação de crédito" onClick="habilitacao()">
                     <label for="credRecovery">Recuperação de crédito</label><br>
                     <input type="radio" name="demand" id="receDiscount" value="Desconto de recebíveis" onClick="habilitacao()">
                     <label for="receDiscount">Desconto de recebíveis</label><br>
                     <input type="radio" name="demand" id="out_bttn" value="Outros" onClick="habilitacao()">
-                    <label for="otherProd">Outros</label>
+                    <label for="otherProd">Outros</label><br>
                 </td>
                 <td class="td_oferta">
-                    <input type="radio" name="product_offer" id="productYes" value="Sim" onClick="habilitacao()">
+                    <input type="radio" name="product_offer" id="productYes" value="Sim" onClick="habilitacao()" required>
                     <label for="productYes">Sim</label><br>
                     <input type="radio" name="product_offer" id="productNo" value="Não" onClick="habilitacao()">
-                    <label for="productNo">Não</label>
+                    <label for="productNo">Não</label><br>
                 </td>
                 <td class="td_qual">
-                    <input type="radio" name="q_product" id="cardsProd" value="Cartões" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="cardsProd" value="Cartões" onClick="habilitacao()" required>
                     <label for="cardsProd">Cartões</label><br>
-                    <input type="radio" name="q_product" id="digitalProd" value="Canais digitais" onClick="habilitacao()">
-                    <label for="digitalProd">Canais digitais</label>
-                    <input type="radio" name="q_product" id="insuranceProd" value="Seguros" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="digitalProd" value="Canais digitais" onClick="habilitacao()">
+                    <label for="digitalProd">Canais digitais </label><br>
+                    <input type="radio" disabled name="q_product" id="insuranceProd" value="Seguros" onClick="habilitacao()">
                     <label for="insuranceProd">Seguros</label><br>
-                    <input type="radio" name="q_product" id="pensionProd" value="Previdência" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="pensionProd" value="Previdência" onClick="habilitacao()">
                     <label for="pensionProd">Previdência</label><br>
-                    <input type="radio" name="q_product" id="investProd" value="Investimentos" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="investProd" value="Investimentos" onClick="habilitacao()">
                     <label for="investProd">Investimentos</label><br>
-                    <input type="radio" name="q_product" id="consorProd" value="Consórcio" onClick="habilitacao()">
-                    <label for="consorProd">Consórcio</label>
-                    <input type="radio" name="q_product" id="chargeProd" value="Cobrança" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="consorProd" value="Consórcio" onClick="habilitacao()">
+                    <label for="consorProd">Consórcio</label><br>
+                    <input type="radio" disabled name="q_product" id="chargeProd" value="Cobrança" onClick="habilitacao()">
                     <label for="chargeProd">Cobrança</label><br>
-                    <input type="radio" name="q_product" id="generalCredProd" value="Crédito geral" onClick="habilitacao()">
-                    <label for="generalCredProd">Crédito geral</label>
-                    <input type="radio" name="q_product" id="savingProd" value="Poupança programada" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="generalCredProd" value="Crédito geral" onClick="habilitacao()">
+                    <label for="generalCredProd">Crédito geral</label><br>
+                    <input type="radio" disabled name="q_product" id="savingProd" value="Poupança programada" onClick="habilitacao()">
                     <label for="savingProd">Poupança programada</label><br>
-                    <input type="radio" name="q_product" id="capitalProd" value="Capital programado" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="capitalProd" value="Capital programado" onClick="habilitacao()">
                     <label for="capitalProd">Capital programado</label><br>
-                    <input type="radio" name="q_product" id="debitProd" value="Débito automático" onClick="habilitacao()">
+                    <input type="radio" disabled name="q_product" id="debitProd" value="Débito automático" onClick="habilitacao()">
                     <label for="debitProd">Débito automático</label><br>
-                    <input type="radio" name="q_product" id="out_bttn" value="Outros onClick="habilitacao()"">
-                    <label for="otherProd">Outros</label>
+                    <input type="radio" disabled name="q_product" id="outProd" value="Outros" onClick="habilitacao()">
+                    <label for="otherProd">Outros</label><br>
+
 
                 </td>
                 <td class="td_efetivou">
-                    <input type="radio" name="effective" id="effYes" value="Sim" onClick="habilitacao()">
+                    <input type="radio" disabled name="effective" id="effYes" value="Sim" onClick="habilitacao()" required>
                     <label for="effYes">Sim</label><br>
-                    <input type="radio" name="effective" id="effNo" value="Não" onClick="habilitacao()">
-                    <label for="effNo">Não</label>
+                    <input type="radio" disabled name="effective" id="effNo" value="Não" onClick="habilitacao()">
+                    <label for="effNo">Não</label><br>
                 </td>
             </tr>
             <tr>
@@ -155,22 +153,22 @@
             </tr>
             <tr>
                 <td class="td_tempo">
-                    <input type="radio" name="time_spent" id="fiveMin" value="Até 5 minutos" onClick="habilitacao()">
+                    <input type="radio" name="time_spent" id="fiveMin" value="Até 5 minutos" onClick="habilitacao()" required>
                     <label for="fiveMin">Até 5 minutos</label><br>
                     <input type="radio" name="time_spent" id="fifteenMin" value="Até 15 minutos" onClick="habilitacao()">
                     <label for="fifteenMin">Até 15 minutos</label><br>
                     <input type="radio" name="time_spent" id="more" value="Acima de 15 minutos" onClick="habilitacao()">
-                    <label for="more">Acima de 15 minutos</label>
+                    <label for="more">Acima de 15 minutos</label><br>
                 </td>
                 <td class="td_hora">
-                    <input type="radio" name="time_hour" id="eightTen" value="08:00-10:00" onClick="habilitacao()">
+                    <input type="radio" name="time_hour" id="eightTen" value="08:00-10:00" onClick="habilitacao()" required>
                     <label for="eightTen">08:00-10:00</label><br>
                     <input type="radio" name="time_hour" id="tenTwelve" value="10:00-12:00" onClick="habilitacao()">
-                    <label for="tenTwelve">10:00-12:00</label>
+                    <label for="tenTwelve">10:00-12:00</label><br>
                     <input type="radio" name="time_hour" id="twelveFif" value="12:00-15:00" onClick="habilitacao()">
                     <label for="twelveFif">12:00-15:00</label><br>
                     <input type="radio" name="time_hour" id="fiftennFive" value="15:00-17:00" onClick="habilitacao()">
-                    <label for="fiftennFive">15:00-17:00</label>
+                    <label for="fiftennFive">15:00-17:00</label><br>
                 </td>
                 <document.getElementById("fiftennFive").checked = false;>
                 <document.getElementById("fiftennFive").checked = false;>

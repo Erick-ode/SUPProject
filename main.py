@@ -14,7 +14,7 @@ def atendimento():
         associate = request.form['associate']
         demand = request.form['demand']
         product_offer = request.form['product_offer']
-        product = request.form['product'] if product_offer == 'Sim' else ''
+        product = request.form['q_product'] if product_offer == 'Sim' else ''
         effective = request.form['effective'] if product_offer == 'Sim' else ''
         time_spent = request.form['time_spent']
         time_hour = request.form['time_hour']
@@ -27,6 +27,7 @@ def atendimento():
             return redirect(url_for('login.index'))
         except:
             return "Houve um problema ao registrar!"
+
     else:
         return render_template('index.html')
 
