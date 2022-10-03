@@ -5,7 +5,7 @@ from files.generate import pd, divide_dataframes, create_csv
 
 export = Blueprint('export', __name__)
 
-directory = '.\\files\\csv_files'
+directory = './files/csv_files'
 
 
 @export.route('/arquivos', methods=['GET'])
@@ -36,11 +36,9 @@ def get_file(file_name):
         df_register = divide_dataframes(df_person, name)
         dfs.append(df_register)
 
-    with pd.ExcelWriter(f'{directory}\\{file_name}') as writer:
+    with pd.ExcelWriter(f'{directory}/{file_name}') as writer:
         for df in dfs:
             df.to_excel(writer, sheet_name=f'{df["Nome"].loc[~df["Nome"].isna()].item()}', index=False)
         df_total.to_excel(writer, sheet_name='Total', index=False)
 
     return send_from_directory(directory, file_name, as_attachment=True)
-
-
