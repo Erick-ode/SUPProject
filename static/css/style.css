@@ -37,7 +37,7 @@
 }
 /**Cor da página*/
 .hero.is-primary {
-  background-color:#146E37;;
+  background-color:#292929;;
   color: #fff
 }
 /**Navegador da página*/  
@@ -45,6 +45,8 @@
   height: 50px;
   font-family: calibri;
   font-weight: 700;
+  background: #146E37
+
 
 }
 
@@ -75,25 +77,22 @@
   color: rgb(255, 255, 255)
 }
 .hero.is-primary .navbar-link:hover,
-.hero.is-primary a.navbar-item:hover {
+.hero.is-primary
+a.navbar-item:hover {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 150;
   overflow: hidden;
   display: block;
+  padding: 8px center;
   text-align: center;
-  padding: 15px 35px;
   text-decoration: none;
 }
 a.navbar-item:hover:not(.active){
-  line-height: px;
-  height: 100%;
-  font-size: 16px;
+  font-size: 20px;
   display: inline-block;
   position: relative;
   z-index: 1;
-  text-decoration: none;
-  text-transform: uppercase;
+ 
   text-align: center;
   color: rgb(58, 233, 23);
   cursor: pointer;
@@ -431,7 +430,7 @@ button,
 input,
 select,
 textarea {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family:calibri
 }
 code,
 pre {
@@ -440,7 +439,7 @@ pre {
   font-family: monospace;
 }
 body {
-  color: #4a4a4a;
+  color: #000000;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
@@ -577,6 +576,48 @@ table th {
   .is-size-7-mobile {
       font-size: .75rem !important
   }
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 186px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 12px 25px;
+  line-height: 1.5;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #10C433;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 0%;
+  margin-top: 45px;
 }
 
 @media screen and (min-width:769px),
@@ -1879,7 +1920,7 @@ a.box:active {
 }
 
 .content table {
-    width: 100%
+    width: 100%;
 }
 
 .td_contato,
@@ -1897,7 +1938,7 @@ a.box:active {
 }
 .content table td,
 .content table th {
-  border: 10px solid #146E37;
+  border: 10px solid #2c2c2c;
   border-top-width: 6px;
   border-right-width: 2px;
   border-bottom-width: 2px;
@@ -1912,6 +1953,7 @@ a.box:active {
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  
 }
 .td_contato table {
   display: inline;

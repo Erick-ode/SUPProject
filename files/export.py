@@ -21,10 +21,10 @@ def list_files():
     return jsonify(files)
 
 
-@export.route('/arquivos/<file_name>', methods=['GET'])
+@export.route('/arquivos/<file_name>/<ag_id>', methods=['GET'])
 @login_required
-def get_file(file_name):
-    create_csv('./files/csv_files/creation.csv', './sup.sql')
+def get_file(file_name, ag_id):
+    create_csv('./files/csv_files/creation.csv', './sup.sql', ag_id)
     df_all = pd.read_csv(f'{directory}/creation.csv', sep=',', encoding='windows-1252')
 
     df_total = divide_dataframes(df_all)
@@ -37,8 +37,8 @@ def get_file(file_name):
         dfs.append(df_register)
 
     with pd.ExcelWriter(f'{directory}/{file_name}') as writer:
+        df_total.to_excel(writer, sheet_name='Total', index=False)
         for df in dfs:
             df.to_excel(writer, sheet_name=f'{df["Nome"].loc[~df["Nome"].isna()].item()}', index=False)
-        df_total.to_excel(writer, sheet_name='Total', index=False)
 
     return send_from_directory(directory, file_name, as_attachment=True)

@@ -11,8 +11,7 @@
     var ids= ['cardsProd', 'digitalProd', 'insuranceProd', 'pensionProd',
      'investProd', 'consorProd', 'chargeProd', 'generalCredProd', 
      'savingProd', 'capitalProd', 'debitProd', 'outProd', 'effYes', 'effNo']
-
-
+ 
     function habilitacao(){
         if(document.getElementById('productYes').checked == true){
             for (var i = 0; i < ids.length; i++) {
@@ -24,6 +23,7 @@
       }
     }
 }
+
   </script>
 
 <div class="content">
@@ -175,7 +175,8 @@
                 
             </tr>
         </table>
-        <input type="submit" value="Enviar" id="submitButton" class="button_enviar" onClick="habilitacao()">
+        <input type="submit" value="Enviar" id="submitButton" class="button_enviar" onclick="fun()" >
+     
     </form>
     {% if admin %}
     <a href="/registros"> Registros</a>
@@ -183,4 +184,3 @@
 </div>
 {% endif %}
 {% endblock %}
-

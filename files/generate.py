@@ -4,7 +4,7 @@ import pandas as pd
 import openpyxl
 
 
-def create_csv(file_name, db_path):
+def create_csv(file_name, db_path, ag_id):
     con = connect(db_path)
     outfile = open(file_name, 'w')
     outcsv = writer(outfile)
@@ -13,9 +13,10 @@ def create_csv(file_name, db_path):
                          'register.channel AS Canal, register.attendance AS Atendimento, '
                          'register.associate AS Associado, register.demand AS Demanda, '
                          'register.product_offer AS Oferta_produto, register.product AS Produto, '
-                         'register.effective AS Efetivou, register.time_spent AS Tempo_médio_gasto, '
-                         'register.time_hour AS Horário_atendimento FROM Register '
-                         'JOIN user ON register.manager_id=user.id')
+                         'register.effective AS Efetivou, register.time_spent AS Tempo_medio_gasto, '
+                         'register.time_hour AS Horario_atendimento FROM Register '
+                         'JOIN user ON register.manager_id=user.id '
+                         'WHERE user.agency = ' + ag_id)
     outcsv.writerow(x[0] for x in cursor.description)
 
     outcsv.writerows(cursor.fetchall())
@@ -59,18 +60,18 @@ def divide_dataframes(df, name='Total'):
                 df['Efetivou'].count()]})
     df_time_spent = pd.DataFrame(
         {'Tempo médio gasto': ['Até 5 minutos', 'Até 15 minutos', 'Acima de 15 minutos', 'Total'],
-         'Nº': [df['Tempo_médio_gasto'].loc[df['Tempo_médio_gasto'] == 'Até 5 minutos'].count(),
-                df['Tempo_médio_gasto'].loc[df['Tempo_médio_gasto'] == 'Até 15 minutos'].count(),
-                df['Tempo_médio_gasto'].loc[df['Tempo_médio_gasto'] == 'Acima de 15 minutos'].count(),
-                df['Tempo_médio_gasto'].count()]})
+         'Nº': [df['Tempo_medio_gasto'].loc[df['Tempo_medio_gasto'] == 'Até 5 minutos'].count(),
+                df['Tempo_medio_gasto'].loc[df['Tempo_medio_gasto'] == 'Até 15 minutos'].count(),
+                df['Tempo_medio_gasto'].loc[df['Tempo_medio_gasto'] == 'Acima de 15 minutos'].count(),
+                df['Tempo_medio_gasto'].count()]})
     df_time_hour = pd.DataFrame(
         {'Horário atendimento': ['08:00-10:00', '10:00-12:00', '12:00-15:00', '15:00-17:00',
                                  'Total'],
-         'Nº': [df['Horário_atendimento'].loc[df['Horário_atendimento'] == '08:00-10:00'].count(),
-                df['Horário_atendimento'].loc[df['Horário_atendimento'] == '10:00-12:00'].count(),
-                df['Horário_atendimento'].loc[df['Horário_atendimento'] == '12:00-15:00'].count(),
-                df['Horário_atendimento'].loc[df['Horário_atendimento'] == '15:00-17:00'].count(),
-                df['Horário_atendimento'].count()]})
+         'Nº': [df['Horario_atendimento'].loc[df['Horario_atendimento'] == '08:00-10:00'].count(),
+                df['Horario_atendimento'].loc[df['Horario_atendimento'] == '10:00-12:00'].count(),
+                df['Horario_atendimento'].loc[df['Horario_atendimento'] == '12:00-15:00'].count(),
+                df['Horario_atendimento'].loc[df['Horario_atendimento'] == '15:00-17:00'].count(),
+                df['Horario_atendimento'].count()]})
 
     products = ['Cartões', 'Canais digitais', 'Seguros', 'Previdência', 'Investimentos', 'Poupança programada',
                 'Capital programado', 'Crédito geral', 'Débito automático', 'Cobrança', 'Consórcios']

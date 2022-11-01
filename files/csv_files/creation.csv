@@ -1,18 +1,1 @@
-Nome,Ag,Contato,Canal,Atendimento,Associado,Demanda,Oferta_produto,Produto,Efetivou,Tempo_médio_gasto,Horário_atendimento
-Erick Amaral,1,Ativo,Presencial,Serviço,Minha carteira,Conta corrente/Poupador,Sim,Cartões,Sim,Até 5 minutos,08:00-10:00
-Erick Amaral,1,Receptivo,Telefone,Negócio,Outras carteiras,Cartões,Sim,Canais digitais,Não,Até 15 minutos,10:00-12:00
-Sandro Sousa dos Anjos,1,Ativo,E-mail,Direcionamento,Outras agências,Canais digitais,Não,,,Acima de 15 minutos,12:00-15:00
-Sandro Sousa dos Anjos,1,Receptivo,Whatsapp,Serviço,Outras cooperativas,Seguros e previdência,Sim,Seguros,Sim,Até 5 minutos,15:00-17:00
-Gabriele Tosti Benitez,1,Ativo,Presencial,Serviço,Outras cooperativas,Consórcio,Sim,Investimentos,Sim,Até 5 minutos,15:00-17:00
-Gabriele Tosti Benitez,1,Ativo,Telefone,Negócio,Não associado,Crédito geral,Sim,Crédito geral,Sim,Acima de 15 minutos,10:00-12:00
-Gabriele Tosti Benitez,1,Receptivo,Whatsapp,Negócio,Outras agências,Crédito geral,Sim,Canais digitais,Sim,Até 5 minutos,08:00-10:00
-Gabriele Tosti Benitez,1,Receptivo,Visita,Direcionamento,Não associado,Outros,Não,,,Até 5 minutos,10:00-12:00
-Gabriele Tosti Benitez,1,Ativo,Telefone,Direcionamento,Poupador,Conta corrente/Poupador,Não,,,Até 15 minutos,15:00-17:00
-Gabriele Tosti Benitez,1,Ativo,E-mail,Serviço,Poupador,Cobrança,Não,,,Acima de 15 minutos,10:00-12:00
-Gabriele Tosti Benitez,1,Receptivo,E-mail,Negócio,Outras agências,Cobrança,Não,,,Até 15 minutos,10:00-12:00
-Gabriele Tosti Benitez,1,Receptivo,Whatsapp,Direcionamento,Poupador,Recuperação de crédito,Não,,,Até 5 minutos,12:00-15:00
-Gabriele Tosti Benitez,1,Receptivo,E-mail,Negócio,Outras carteiras,Cobrança,Sim,Cobrança,Não,Até 15 minutos,12:00-15:00
-Gabriele Tosti Benitez,1,Receptivo,Whatsapp,Negócio,Outras cooperativas,Consórcio,Sim,Débito automático,Não,Até 5 minutos,10:00-12:00
-Gabriele Tosti Benitez,1,Receptivo,E-mail,Negócio,Outras cooperativas,Seguros e previdência,Não,,,Até 5 minutos,12:00-15:00
-Sandro Sousa dos Anjos,1,Receptivo,Visita,Negócio,Outras agências,Canais digitais,Sim,Capital programado,Não,Acima de 15 minutos,12:00-15:00
-Sandro Sousa dos Anjos,1,Ativo,Whatsapp,Serviço,Outras cooperativas,Seguros e previdência,Sim,Consórcio,Sim,Até 15 minutos,12:00-15:00
+Nome,Ag,Contato,Canal,Atendimento,Associado,Demanda,Oferta_produto,Produto,Efetivou,Tempo_medio_gasto,Horario_atendimento

@@ -32,10 +32,19 @@
                         {% if admin %}
                         <a href="{{ url_for('login.usuarios') }}" class="navbar-item">
                             Usuários
-                        </a>
-                        <a href="{{ url_for('export.get_file', file_name='Relatorio.xlsx') }}" class="navbar-item">
+                        </a> 
+                    <div class= "dropdown">
+                        <a class="dropdown dropbtn navbar-item">
                             Download relatório
+                            
                         </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('export.get_file', file_name='Relatorio-09.xlsx', ag_id=9) }}">Ag. Coopagro</a>
+                            <a href="{{ url_for('export.get_file', file_name='Relatorio-34.xlsx', ag_id=34) }}">Ag. Dez de Maio</a>
+                        </div>
+                    </div>
+
+                       
                         {% endif %}
                         <a href="{{ url_for('auth.logout') }}" class="navbar-item">
                             Sair
